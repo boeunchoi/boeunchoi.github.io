@@ -43,7 +43,7 @@
       "institution": "Sejong University",
       "location": "Seoul, Korea",
       "url": "http://en.sejong.ac.kr/eng/academics/Department_of_Physics_and_Astronomy.do",
-      "area": "Astronomy", "Physics"
+      "area": ["Astronomy", "Physics"],
       "studyType": "BSc",
       "startDate": "2014-03-02",
       "endDate": "2019-02-14"
