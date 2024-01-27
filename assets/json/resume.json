@@ -24,7 +24,7 @@
     {
       "institution": "University of Washington, Seattle",
       "url": "https://astro.washington.edu/",
-      "location": "Seattle, USA"
+      "location": "Seattle, USA",
       "area": "Astronomy",
       "studyType": "PhD",
       "startDate": "2021-09-30",
@@ -32,7 +32,7 @@
 	}, 
 	{
       "institution": "Sejong University",
-      "location": "Seoul, Korea"
+      "location": "Seoul, Korea",
       "url": "http://en.sejong.ac.kr/eng/academics/Department_of_Physics_and_Astronomy.do",
       "area": "Astronomy",
       "studyType": "MSc",
@@ -41,7 +41,7 @@
 	}, 
   {
       "institution": "Sejong University",
-      "location": "Seoul, Korea"
+      "location": "Seoul, Korea",
       "url": "http://en.sejong.ac.kr/eng/academics/Department_of_Physics_and_Astronomy.do",
       "area": "Astronomy", "Physics"
       "studyType": "BSc",
@@ -56,7 +56,7 @@
       "url": "https://example.com",
       "startDate": "2022-07-30",
       "endDate": "Present",
-      "advisor": "Prof. Jessica K. Werk"
+      "advisor": "Prof. Jessica K. Werk",
       "summary": "Metallicity study of the ionized diffuse gas at the Milky Way disk-halo interface using HST UV archival data 
       with a precise ionization correction. This work traces the Galactic fountain mechanism and gas mixing in the Milky Way CGM.",
       "highlights": ["CGM, Milky Way, HST, Spectroscopy"]
@@ -67,7 +67,7 @@
       "url": "https://example.com",
       "startDate": "2021-09-30",
       "endDate": "Present",
-      "advisor": "Prof. Emily M. Levesque"
+      "advisor": "Prof. Emily M. Levesque",
       "summary": "Chemical abundance study of evolved massive stars to search for Thorne-{\.Z}ytkow objects",
       "highlights": ["Massive stars, Chemical abundance, Spectroscopy"]
     }, 
@@ -77,7 +77,7 @@
       "url": "https://example.com",
       "startDate": "2021-03-02",
       "endDate": "2021-07-31",
-      "advisor": "Prof. Maurice H. P. M. van Putten"
+      "advisor": "Prof. Maurice H. P. M. van Putten",
       "summary": "3-body simulation to investigate orbital stability of prograding and retrograding circumbinary planets",
       "highlights": ["Exoplanet, Dynamics"]
     }, 
@@ -87,7 +87,7 @@
       "url": "https://example.com",
       "startDate": "2019-03-02",
       "endDate": "2021-02-14",
-      "advisor": "Prof. Hee-Won Lee"
+      "advisor": "Prof. Hee-Won Lee",
       "summary": ["Spectroscopic survey of Raman-scattered He~II features in young planetary nebulae.", 
       "Radiative transfer for Raman-scattered He~II in a thick H~I medium of mass-losing evolved stars."],
       "highlights": ["Planetary nebula, Evolved star, Radiative transfer, Spectroscopy, Raman scattering"]
@@ -96,28 +96,28 @@
   "publications": [
     {
       "name": "The Metallicity Mapping of the Ionized Diffuse Gas at the Milky Way Disk-halo Interface",
-      "author": "Choi, B.-E., Werk, J. K., Tchernyshyov, K., et al."
+      "author": "Choi, B.-E., Werk, J. K., Tchernyshyov, K., et al.",
       "publisher": "in prep",
       "releaseDate": "in prep",
       "url": "https://ui.adsabs.harvard.edu/abs/2023AAS...24124505C/abstract",
     },
     {
       "name": "Discovery of Raman-scattered He II λ6545 in the Planetary Nebulae NGC 6886 and NGC 6881",
-      "author": "Choi, B.-E. & Lee, H.-W."
+      "author": "Choi, B.-E. & Lee, H.-W.",
       "publisher": "The Astrophysical Journal Letters, 903, L39",
       "releaseDate": "2020-11-30",
       "url": "https://ui.adsabs.harvard.edu/abs/2020ApJ...903L..39C/abstract",
     },
     {
       "name": "Line Formation of Raman-scattered He II λ 4851 in an Expanding Spherical H I Shell in Young Planetary Nebulae",
-      "author": "Choi, B.-E., Chang, S.-J., Lee, H.-G. & Lee, H.-W."
+      "author": "Choi, B.-E., Chang, S.-J., Lee, H.-G. & Lee, H.-W.",
       "publisher": "The Astrophysical Journal, 889, 2",
       "releaseDate": "2020-01-30",
       "url": "https://ui.adsabs.harvard.edu/abs/2020ApJ...889....2C/abstract",
     },
     {
       "name": "RAMSES II: RAMan Search for Extragalactic Symbiotic Stars Project Concept, Commissioning, and Early Results from the Science Verification Phase",
-      "author": "Angeloni, R., ..., Choi, B.-E., et al."
+      "author": "Angeloni, R., ..., Choi, B.-E., et al.",
       "publisher": "The Astronomical Journal, 157, 156",
       "releaseDate": "2019-04-30",
       "url": "https://ui.adsabs.harvard.edu/abs/2019AJ....157..156A/abstract",
