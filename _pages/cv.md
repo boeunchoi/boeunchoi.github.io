@@ -1,7 +1,7 @@
 ---
 layout: cv
 permalink: /cv/
-title: CV
+title: cv
 nav: true
 nav_order: 5
 cv_pdf: bechoi_cv_Jan2024.pdf
