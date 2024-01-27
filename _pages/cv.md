@@ -1,11 +1,11 @@
 ---
-layout: cv
+layout: CV
 permalink: /cv/
-title: cv
+title: CV
 nav: true
 nav_order: 5
-cv_pdf: example_pdf.pdf
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
+cv_pdf: bechoi_cv_Jan2024.pdf
+description: (Lastly updated in January, 2024) The full version can be found in pdf format at the right. 
 toc:
   sidebar: left
 ---

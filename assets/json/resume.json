@@ -57,8 +57,7 @@
       "startDate": "2022-07-30",
       "endDate": "Present",
       "advisor": "Prof. Jessica K. Werk",
-      "summary": "Metallicity study of the ionized diffuse gas at the Milky Way disk-halo interface using HST UV archival data 
-      with a precise ionization correction. This work traces the Galactic fountain mechanism and gas mixing in the Milky Way CGM.",
+      "summary": "Metallicity study of the ionized diffuse gas at the Milky Way disk-halo interface using HST UV archival data with a precise ionization correction. This work traces the Galactic fountain mechanism and gas mixing in the Milky Way CGM.",
       "highlights": ["CGM, Milky Way, HST, Spectroscopy"]
     }, 
     {
@@ -68,7 +67,7 @@
       "startDate": "2021-09-30",
       "endDate": "Present",
       "advisor": "Prof. Emily M. Levesque",
-      "summary": "Chemical abundance study of evolved massive stars to search for Thorne-{\.Z}ytkow objects",
+      "summary": "Chemical abundance study of evolved massive stars to search for Thorne-Zytkow objects.",
       "highlights": ["Massive stars, Chemical abundance, Spectroscopy"]
     }, 
     {
@@ -78,7 +77,7 @@
       "startDate": "2021-03-02",
       "endDate": "2021-07-31",
       "advisor": "Prof. Maurice H. P. M. van Putten",
-      "summary": "3-body simulation to investigate orbital stability of prograding and retrograding circumbinary planets",
+      "summary": "3-body simulation to investigate orbital stability of prograding and retrograding circumbinary planets.",
       "highlights": ["Exoplanet, Dynamics"]
     }, 
     {
@@ -88,8 +87,7 @@
       "startDate": "2019-03-02",
       "endDate": "2021-02-14",
       "advisor": "Prof. Hee-Won Lee",
-      "summary": ["Spectroscopic survey of Raman-scattered He~II features in young planetary nebulae.", 
-      "Radiative transfer for Raman-scattered He~II in a thick H~I medium of mass-losing evolved stars."],
+      "summary": ["Spectroscopic survey of Raman-scattered He~II features in young planetary nebulae.", "Radiative transfer for Raman-scattered He~II in a thick H~I medium of mass-losing evolved stars."],
       "highlights": ["Planetary nebula, Evolved star, Radiative transfer, Spectroscopy, Raman scattering"]
     }
   ],

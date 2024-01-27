@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Astronomy, Ph.D. Student @ University of Washington, Seattle
 
 profile:
   align: right
