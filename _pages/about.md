@@ -6,7 +6,7 @@ subtitle: Astronomy, Ph.D. Student @ University of Washington, Seattle
 
 profile:
   align: right
-  image: bechoi_profile_1.jpg
+  image: bechoi_profile_2.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>555 your office number</p>

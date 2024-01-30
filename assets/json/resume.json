@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Bo-Eun Choi",
-    "label": "Astronomy, Ph.D. Student",
+    "label": "Astronomy, PhD Student",
     "image": "",
     "email": "bechoi@uw.edu",
     "url": "https://boeunchoi.github.io/",
@@ -43,7 +43,7 @@
       "institution": "Sejong University",
       "location": "Seoul, Korea",
       "url": "http://en.sejong.ac.kr/eng/academics/Department_of_Physics_and_Astronomy.do",
-      "area": ["Astronomy", "Physics"],
+      "area": "Astronomy, Physics",
       "studyType": "BSc",
       "startDate": "2014-03-02",
       "endDate": "2019-02-14"
