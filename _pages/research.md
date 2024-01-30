@@ -1,9 +1,9 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
+title: research
+permalink: /research/
 description: A growing collection of your cool projects.
-nav: false
+nav: true
 nav_order: 3
 display_categories: [work, fun]
 horizontal: false
