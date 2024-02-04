@@ -11,15 +11,9 @@
       "city": "Seattle",
       "countryCode": "US",
       "region": "Washington"
-    },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
-      }
-    ]
+    }
   },
+
   "education": [
     {
       "institution": "University of Washington, Seattle",
@@ -48,8 +42,9 @@
       "startDate": "2014-03-02",
       "endDate": "2019-02-14"
 	}
-],
-  "Research Experience": [
+  ],
+
+  "Work": [
     {
       "name": "University of Washington, Seattle",
       "position": "Graduate Research Assistant",
@@ -113,21 +108,7 @@
       "url": "https://ui.adsabs.harvard.edu/abs/2019AJ....157..156A/abstract"
     }
   ],
-  "skills": [
-    {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
-  ],
+  
   "languages": [
     {
       "language": "Korean",
@@ -136,7 +117,7 @@
     },
     {
       "language": "English",
-      "fluency": "Working proficiency",
+      "fluency": "Professional working proficiency",
       "icon": ""
     }
   ],
