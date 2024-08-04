@@ -8,7 +8,7 @@ middle_name: (Bonni)
 last_name: Choi
 email: bechoi@uw.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Bo-Eun (Bonni) Choi's personal website. 
+  Bo-Eun (Bonni) Choi's personal website.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -103,7 +103,7 @@ zotero_username: # your zotero username
 wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 
 contact_note: >
-  Please feel free to reach out to me at my email. 
+  Please feel free to reach out to me at my email.
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -306,7 +306,6 @@ scholar:
   group_by: none
   group_order: descending
 
-
 # Display different badges withs stats for your publications
 enable_publication_badges:
   altmetric: true # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)
@@ -396,7 +395,6 @@ mdb:
 medium_zoom:
   version: "1.0.8"
   integrity: "sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8="
-
 # -----------------------------------------------------------------------------
 # Get external JSON data
 # -----------------------------------------------------------------------------
