@@ -8,9 +8,7 @@ category: work
 related_publications: true
 ---
 
-Galaxies are surrounded by a gaseous halo, so does our Milky Way. It features an atmosphere of the galaxies known as the circumgalactic medium (CGM). Unlike Earth's atmosphere, which extends to heights comparable to Earth's radius and has a mass on the order of one-millionth that of Earth, the CGM typically extends to the virial radius of the galaxy -- approximately 300 kpc for the Milky Way, which has the radius is about 15 kpc -- and is thought to contain a much greater mass than that of the central galaxy itself. 
-
-
+Galaxies are surrounded by a gaseous halo, so does our Milky Way. It features an atmosphere of the galaxies known as the circumgalactic medium (CGM). Unlike Earth's atmosphere, which extends to heights comparable to Earth's radius and has a mass on the order of one-millionth that of Earth, the CGM typically extends to the virial radius of the galaxy -- approximately 300 kpc for the Milky Way, which has the radius is about 15 kpc -- and is thought to contain a much greater mass than that of the central galaxy itself.
 
     ---
     layout: page
