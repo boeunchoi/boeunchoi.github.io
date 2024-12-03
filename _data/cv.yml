@@ -2,35 +2,38 @@
   type: map
   contents:
     - name: Name
-      value: Bo-Eun Choi (Bonni)
+      value: Bo-Eun (Bonni) Choi
+    - name: Pronouns
+      value: she/her
     - name: Affiliation
       value: University of Washington, Seattle
     - name: Position
       value: Astronomy, PhD Student
     - name: Contact
       value: bechoi@uw.edu
-    - name: Languages
-      value: Korean, English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD, Astronomy
+    - title: PhD Student, Astronomy
       institution: University of Washington, Seattle, USA
+      school_url: "https://astro.washington.edu/"
       year: 2021 - present
       description:
         - title: Advisors
           contents:
-            - Jessica K. Werk (UW)
-            - Emily M. Levesque (UW)
+            - Prof. Jessica K. Werk
+            - Prof. Emily M. Levesque
     - title: MSc, Astronomy
       institution: Sejong University, South Korea
+      school_url: "http://en.sejong.ac.kr/eng/academics/Department_of_Physics_and_Astronomy.do"
       year: 2019 - 2021
       description:
-        - "Advisor: Hee-Won Lee"
+        - "Advisor: Prof. Hee-Won Lee"
         - "Thesis: Line Formation and Spectroscopic Survey of Raman-scattered He II Features in Young Planetary Nebulae"
     - title: BSc, Astronomy  |  BSc, Physics
       institution: Sejong University, South Korea
+      school_url: "http://en.sejong.ac.kr/eng/academics/Department_of_Physics_and_Astronomy.do"
       year: 2014 - 2019
 
 - title: Work Experience
@@ -38,9 +41,11 @@
   contents:
     - title: Post-master Researcher
       institution: UNIST, South Korea
+      school_url: "https://physics.unist.ac.kr/"
       year: 2021
       description:
-        - "(Supervisor: Prof. Maurice van Putten) Developing a 3-body simulation code for testing orbital stability of prograding and retrograding circumbinary planets"
+        - "Supervisor: Prof. Maurice van Putten"
+        - "Developing a 3-body simulation code for testing orbital stability of prograding and retrograding circumbinary planets"
 
 - title: Honors and Awards
   type: time_table
