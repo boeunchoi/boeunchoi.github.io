@@ -37,7 +37,7 @@ object-fit: contain;
 <!-- small caption -->
 <style>
 .small-caption {
-  font-size: 0.9rem; /* Adjust as needed */
+  font-size: 0.88rem; /* Adjust as needed */
   color: #424E58; /* Optional: a lighter text color */
 }
 </style>
@@ -78,14 +78,14 @@ The Milky Way is an excellent laboratory for investigating the DHI, owing to amp
 
 Understanding gas accretion and recycling at the DHI is critical for unraveling the processes driving galaxy evolution. Key questions include: How does halo gas cool and accrete onto the star-forming disk? How does metal-poor gas survive and fuel star formation as observed in stellar populations? And how is gas ejected by feedback processes recycled back to the disk?
 
-Metallicity serves as an excellent tracer of gas flows, their mixing, and origins; however, measuring the metallicity of ionized gas remains challenging, primarily due to the difficulty in constraining the amount of ionized hydrogen. In my recent work (<a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...976..222C/abstract">Choi et al. 2024</a>), I measured and mapped the metallicity of ionized gas clouds at the Milky Way’s DHI along 10 sight lines. I determined ion content (metals) from UV absorption spectroscopy of halo stars, and I constrained the ionized gas content (electron column density) using the dispersion measures (DMs) of pulsars that lie in the same globular clusters as these UV-bright halo stars (see the schematic below).
+Metallicity serves as an excellent tracer of gas flows, their mixing, and origins; however, measuring metallicity of ionized gas remains challenging, primarily due to difficulties in constraining the amount of ionized hydrogen. In my recent work (<a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...976..222C/abstract">Choi et al. 2024</a>), I measured and mapped the metallicity of ionized gas clouds at the Milky Way’s DHI using halo star-pulsar pairs, which provide precise ionizaton corrections. By analyzing UV spectra available from <a href="https://archive.stsci.edu/">MAST</a>, I determined ion content (metals) from absorption spectroscopy of halo stars, mostly observed with HST/COS and HST/STIS. The ionized gas content (electron column density) was constrained by the dispersion measures (DMs) of pulsars that lie in the same globular clusters as these UV-bright halo stars (see the schematic below).
 
-This study reveals a large scatter in metallicity values (0.04–3.2 solar metallicity), suggesting that the DHI comprises a mixture of gaseous structures with multiple origins. Notably, the findings provide clear evidence of gas recycling processes, as indicated by the detection of a supersolar infalling cloud.
+This study reveals a large scatter in metallicity values (0.04–3.2 solar metallicity), suggesting that the DHI comprises a mixture of gaseous structures with multiple origins. Notably, the findings provide clear evidence of gas recycling processes, as indicated by the detection of a supersolar infalling cloud. We estimated the timescale for gas recycling processes at the DHI, often referred to as a "Galactic fountain", to be about tens of millions of years.
 
 <div class="col-sm mt-3 mt-md-0">
 <figure>
-{% include figure.liquid path="assets/img/cgm/halo_dm_schematic.png" title="example image" class="original-ratio" %}
-<figcaption class="small-caption">A schematic of the metallicity study using pulsar DMs. The total electron column densityderived from pulsar DMs provides an upper limit for ionized hydrogen column density of the cloud along the sight line. By fitting the data with a photoionization model, we estimated the metallicity of gas clouds at the DHI.</figcaption>
+{% include figure.liquid path="assets/img/cgm/halo_dm_schematic.png" title="pulsar-halo star schematic" class="original-ratio" %}
+<figcaption class="small-caption">A schematic of the metallicity study using pulsar DMs. The total electron column density derived from pulsar DMs provides an upper limit for ionized hydrogen column density of the cloud along the sight line. By fitting the data with a photoionization model, we estimated the metallicity of gas clouds at the DHI.</figcaption>
 </figure>
 
 <!-- Galaxies are surrounded by a gaseous halo, so does our Milky Way. It features an atmosphere of the galaxies known as the circumgalactic medium (CGM). Unlike Earth's atmosphere, which extends to heights comparable to Earth's radius and has a mass on the order of one-millionth that of Earth, the CGM typically extends to the virial radius of the galaxy -- approximately 300 kpc for the Milky Way, which has the radius is about 15 kpc -- and is thought to contain a much greater mass than that of the central galaxy itself. -->
