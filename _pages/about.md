@@ -16,7 +16,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I'm an Astronomy PhD student at the University of Washington. My main [research interest](/research/) is the baryon cycle in galaxies -- understanding how baryonic matter is accreted into galaxies, how it fuels galactic star formation, and how it is recycled, in particular, by stellar feedback. I'm also passionate about how massive stars evolve and die, exploring their unique evolutionary history and impacts on their surroundings. Spectroscopy is my favorite tool to find hints on these cosmic scenes.
+I'm an Astronomy PhD candidate at the University of Washington. My main [research interest](/research/) is the baryon cycle in galaxies -- understanding how baryonic matter is accreted into galaxies, how it fuels galactic star formation, and how it is recycled, in particular, by stellar feedback. I'm also passionate about how massive stars evolve and die, exploring their unique evolutionary history and impacts on their surroundings. Spectroscopy is my favorite tool to find hints on these cosmic scenes.
 
 <br>
 <!-- "Painters understand nature and love it, and teach us to see." - Vincent van Gogh -->

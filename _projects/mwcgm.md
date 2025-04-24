@@ -72,9 +72,7 @@ Similar to the Earth, galaxies are surrounded by an atmosphere known as the circ
 <h3>Nature of the Milky Way Disk-Halo Interface</h3>
 
 The interface between the galactic disk and halo, known as the disk-halo interface (DHI), is a dynamic region where gas accretion, ejection, and recycling interplay. Despite its critical role in galaxy evolution, studying this very inner region of the circumgalactic medium (CGM) has been challenging due to its small scale (~few kpc) compared to the entire CGM (~few hundred kpc).
-The Milky Way is an excellent laboratory for investigating the DHI, owing to ample observations with high data quality and spatial resolution.
-
-<!--In the past decades, H I 21 cm surveys have mapped neutral gas clouds (T < 10<sup>4</sup> K) for the entire sky. Observations of H&alpha; emission from cool-warm gas (T ~ 10<sup>4-5</sup> K)-->
+The Milky Way is an ideal laboratory for investigating the DHI, owing to ample observations with high data quality and spatial resolution.
 
 Understanding gas accretion and recycling at the DHI is critical for unraveling the processes driving galaxy evolution. Key questions include: How does halo gas cool and accrete onto the star-forming disk? How does metal-poor gas survive and fuel star formation as observed in stellar populations? And how is gas ejected by feedback processes recycled back to the disk?
 
@@ -89,3 +87,7 @@ This study reveals a large scatter in metallicity values (0.04–3.2 solar metal
 </figure>
 
 <!-- Galaxies are surrounded by a gaseous halo, so does our Milky Way. It features an atmosphere of the galaxies known as the circumgalactic medium (CGM). Unlike Earth's atmosphere, which extends to heights comparable to Earth's radius and has a mass on the order of one-millionth that of Earth, the CGM typically extends to the virial radius of the galaxy -- approximately 300 kpc for the Milky Way, which has the radius is about 15 kpc -- and is thought to contain a much greater mass than that of the central galaxy itself. -->
+
+<br>
+<!--
+<h3>Magellanic Stream: the Largest Gaseous Structure in the Sky</h3> -->
