@@ -50,9 +50,12 @@
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: 2025
+      items:
+        - Distinction in Research (Astronomy Department, UW)
     - year: 2022
       items:
-        - Outstanding TA Award (Astronomy Department, UW)
+        - Distinction in Teaching (Astronomy Department, UW)
     - year: 2021
       items:
         - Outstanding Research Award (Graduate School, Sejong University)
