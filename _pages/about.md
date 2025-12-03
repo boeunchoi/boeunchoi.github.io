@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Astronomy, PhD Student @ University of Washington, Seattle
+subtitle: Astronomy, PhD Candidate @ University of Washington, Seattle
 
 profile:
   align: right

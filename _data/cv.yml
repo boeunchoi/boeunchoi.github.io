@@ -8,14 +8,14 @@
     - name: Affiliation
       value: University of Washington, Seattle
     - name: Position
-      value: Astronomy, PhD Student
+      value: Astronomy, PhD Candidate
     - name: Contact
       value: bechoi@uw.edu
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD Student, Astronomy
+    - title: PhD, Astronomy
       institution: University of Washington, Seattle, USA
       school_url: "https://astro.washington.edu/"
       year: 2021 - present
