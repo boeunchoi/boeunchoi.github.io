@@ -24,6 +24,7 @@
           contents:
             - Prof. Jessica K. Werk
             - Prof. Emily M. Levesque
+        - "Thesis: How Is the Galactic Weather?: Tracing the Baryon Cycle and Gas Flows in the Milky Way’s Inner Atmosphere"
     - title: MSc, Astronomy
       institution: Sejong University, South Korea
       school_url: "http://en.sejong.ac.kr/eng/academics/Department_of_Physics_and_Astronomy.do"
@@ -39,7 +40,7 @@
 - title: Work Experience
   type: time_table
   contents:
-    - title: Post-master Researcher
+    - title: Pre-doctoral Researcher
       institution: UNIST, South Korea
       school_url: "https://physics.unist.ac.kr/"
       year: 2021
@@ -61,4 +62,4 @@
         - Outstanding Research Award (Graduate School, Sejong University)
     - year: 2019
       items:
-        - Outstanding Presentation Award (Korean Physical Society)
+        - Best Presentation Award (Korean Physical Society)
