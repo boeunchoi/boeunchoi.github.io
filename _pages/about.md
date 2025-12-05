@@ -1,7 +1,9 @@
 ---
 layout: about
 title: about
-permalink: /
+permalink: /about/
+nav: true
+nav_order: 2
 subtitle: Astronomy, PhD Candidate @ University of Washington, Seattle
 
 profile:
