@@ -1,0 +1,100 @@
+---
+layout: default
+---
+<div class="post">
+  <article>
+    {% if page.profile %}
+      <div class="home-hero">
+        <!-- LEFT: big profile image -->
+        <div class="home-hero-image">
+          {% if page.profile.image %}
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+            {% endif %}
+            {% capture sizes %}"(min-width: 768px) 360px, 80vw"{% endcapture %}
+            {%
+              include figure.liquid
+              path       = profile_image_path
+              class      = profile_image_class
+              sizes      = sizes
+              alt        = page.profile.image
+              cache_bust = true
+            %}
+          {% endif %}
+        </div>
+
+        <!-- RIGHT: name, affiliation, and intro text -->
+        <div class="home-hero-text">
+          <header class="post-header">
+            <h1 class="post-title">
+              {% if site.title == 'blank' %}
+                <span class="font-weight-bold">{{ site.first_name }}</span>
+                <span class="font-weight-bold">{{ site.last_name }}</span> {{ site.middle_name }}
+              {% else %}
+                {{ site.title }}
+              {% endif %}
+            </h1>
+            <p class="desc">{{ page.subtitle }}</p>
+          </header>
+
+          <div class="clearfix">
+            {{ content }}
+          </div>
+          <!-- SOCIAL MOVED INTO RIGHT COLUMN -->
+          {% if page.social %}
+            <div class="home-social">
+              <div class="contact-icons">
+                {% include social.liquid %}
+              </div>
+              <div class="contact-note">{{ site.contact_note }}</div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <!-- Fallback if there is no profile block -->
+      <header class="post-header">
+        <h1 class="post-title">
+          {% if site.title == 'blank' %}
+            <span class="font-weight-bold">{{ site.first_name }}</span>
+            <span class="font-weight-bold">{{ site.last_name }}</span> {{ site.middle_name }}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
+        </h1>
+        <p class="desc">{{ page.subtitle }}</p>
+      </header>
+
+      <div class="clearfix">
+        {{ content }}
+      </div>
+    {% endif %}
+
+    <!-- News -->
+    {% if page.news and site.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+      </h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+    <!-- Latest posts -->
+    {% if page.latest_posts %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
+    {% endif %}
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+  </article>
+</div>

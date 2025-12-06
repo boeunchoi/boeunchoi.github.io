@@ -7,7 +7,7 @@ nav_order: 2
 subtitle: Astronomy, PhD Candidate @ University of Washington, Seattle
 
 profile:
-  align: right
+  align: left
   image: bechoi_profile_2.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
@@ -15,7 +15,7 @@ profile:
 news: false # includes a list of news items
 latest_posts: false # includes a list of the newest posts
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # includes social icons at the bottom of the page
 ---
 
 I'm an Astronomy PhD candidate at the University of Washington. My main [research interest](/research/) is the baryon cycle in galaxies -- understanding how baryonic matter is accreted into galaxies, how it fuels galactic star formation, and how it is recycled, in particular, by stellar feedback. I'm also passionate about how massive stars evolve and die, exploring their unique evolutionary history and impacts on their surroundings. Spectroscopy is my favorite tool to find hints on these cosmic scenes.

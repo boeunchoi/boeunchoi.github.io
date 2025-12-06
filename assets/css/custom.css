@@ -1,0 +1,99 @@
+/* Layout: image left, text right */
+
+.home-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* On small screens, stack vertically */
+@media (max-width: 768px) {
+  .home-hero {
+    flex-direction: column;
+  }
+}
+
+/* Image column: fixed width */
+.home-hero-image {
+  flex: 0 0 auto;
+}
+
+/* Make the image smaller and stop it from stretching full width */
+.home-hero-image img {
+  width: 290px !important; /* try 260–300px; adjust to taste */
+  max-width: 290px !important;
+  height: auto;
+  display: block;
+}
+
+/* Text column: take the remaining space */
+.home-hero-text {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Home social icons: base style */
+.home-social .contact-icons a {
+  color: #000000 !important; /* black */
+  font-size: 1.6rem; /* icon size (1.4–1.8 is a good range) */
+  margin: 0 8px; /* spacing between icons */
+  text-decoration: none;
+}
+
+/* Hover: turn icons blue */
+.home-social .contact-icons a:hover,
+.home-social .contact-icons a:focus {
+  color: #1f66b6 !important; /* blue on hover */
+}
+
+/* Dark mode: make icons white/light-gray */
+html[data-theme="dark"] .home-social .contact-icons a {
+  color: #e5e5e5 !important; /* or #ffffff for pure white */
+}
+
+/* Dark mode: hover */
+html[data-theme="dark"] .home-social .contact-icons a:hover,
+html[data-theme="dark"] .home-social .contact-icons a:focus {
+  color: #2998e7 !important;
+}
+
+/* Container for box links */
+.link-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 1.5rem 0;
+}
+
+/* Base look for each box */
+.link-box {
+  padding: 6px 28px;
+  border: 1.8px solid #000; /* black border – change to #3182ce for blue */
+  border-radius: 0; /* sharp edges */
+  font-size: 0.95rem;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+/* Hover effect */
+.link-box:hover {
+  background-color: #1f66b6;
+  color: #fff;
+  border-color: #1f66b6;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .link-box {
+  border-color: #e5e5e5; /* light gray border */
+  color: #e5e5e5; /* light gray text */
+}
+
+html[data-theme="dark"] .link-box:hover {
+  background-color: #2998e7; /* gray/white fill */
+  color: #fff; /* black text on hover */
+  border-color: #2998e7;
+}
