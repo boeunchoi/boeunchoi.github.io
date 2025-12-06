@@ -69,7 +69,7 @@ html[data-theme="dark"] .home-social .contact-icons a:focus {
 
 /* Base look for each box */
 .link-box {
-  padding: 5px 32px;
+  padding: 5px 33px;
   border: 1.9px solid #000; /* black border – change to #3182ce for blue */
   border-radius: 0; /* sharp edges */
   font-size: 0.92rem;
