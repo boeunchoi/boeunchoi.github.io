@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: assets/img/12.jpg
+title: Seattle
+description: WA, USA
+img: assets/img/space_needle.jpg
 importance: 1
 category: fun
 related_publications: true
