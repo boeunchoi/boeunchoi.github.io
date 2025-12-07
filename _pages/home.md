@@ -12,7 +12,7 @@ subtitle: Astronomy, PhD Candidate @ University of Washington, Seattle
 
 profile:
   align: left
-  image: bechoi_profile.JPG
+  image: bechoi_profile.jpg
   image_circular: false
 
 news: false # includes a list of news items
