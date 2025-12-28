@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Milky Way CGM
-description: Probing the gaseous halo of the Milky Way
+title: Radiative Transfer through Neutral Hydrogen
+description: Rayleigh and Raman Scattering in H I Medium
 img: assets/img/cgm/plank_mw.png
-importance: 1
-category: research
-related_publications: False
+importance: 2
+category: fun
+related_publications: false
 ---
 
 <!-- match the figure height -->

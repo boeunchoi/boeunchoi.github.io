@@ -107,3 +107,44 @@ html[data-theme="dark"] .link-box:hover {
 .link-box:focus {
   text-decoration: none !important;
 }
+
+/* Publication Preview */
+img.preview {
+  transform: scale(1.5) translateY(1rem);
+  transform-origin: left center;
+}
+
+/* Add space between preview image and text */
+.publications .col-sm-8 {
+  padding-left: 4rem; /* try 1rem–2rem */
+}
+
+#light-toggle i {
+  display: none;
+}
+
+html[data-theme="light"] #light-toggle .fa-moon {
+  display: inline-block;
+}
+
+html[data-theme="dark"] #light-toggle .fa-lightbulb {
+  display: inline-block;
+}
+
+#light-toggle i {
+  display: none;
+  vertical-align: middle;
+  line-height: 1;
+  position: relative; /* keep relative if you want fine tuning */
+  top: 0; /* important: no global push */
+}
+
+html[data-theme="light"] #light-toggle .fa-moon {
+  display: inline-block;
+}
+
+html[data-theme="dark"] #light-toggle .fa-lightbulb {
+  display: inline-block;
+  top: 6.5px; /* adjust only bulb; try 1–3px */
+  margin-left: 0.62rem;
+}
