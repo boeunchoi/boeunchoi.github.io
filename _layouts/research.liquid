@@ -8,7 +8,7 @@ layout: default
   - A study shows a breadcrumb back to its parent and, with related_publications: true,
     the papers cited in its text via {% raw %}{% cite key %}{% endraw %}.
 {% endcomment %}
-{% assign parent = nil %}
+{% assign parent = null %}
 {% if page.parent %}
   {% assign parent = site.projects | where: 'slug', page.parent | first %}
 {% endif %}
@@ -17,7 +17,9 @@ layout: default
     {% if page.collection == 'projects' %}
       <nav class="crumbs" aria-label="Breadcrumb">
         <a href="{{ '/research/' | relative_url }}">Research</a><span aria-hidden="true">/</span>
-        {% if parent %}<a href="{{ parent.url | relative_url }}">{{ parent.title }}</a><span aria-hidden="true">/</span>{% endif %}
+        {% if parent -%}
+          <a href="{{ parent.url | relative_url }}">{{ parent.title }}</a><span aria-hidden="true">/</span>
+        {%- endif %}
       </nav>
     {% endif %}
     <h1 class="post-title">{{ page.heading | default: page.title }}</h1>
@@ -35,11 +37,32 @@ layout: default
       {% for p in projects %}
         {% unless p.parent %}
           <article class="research-row">
-            {% if p.img %}<a href="{{ p.url | relative_url }}" class="thumb" tabindex="-1" aria-hidden="true"><img src="{{ p.img | relative_url }}" alt="" loading="lazy"></a>{% endif %}
+            {% if p.img -%}
+              <a href="{{ p.url | relative_url }}" class="thumb" tabindex="-1" aria-hidden="true"
+                ><img src="{{ p.img | relative_url }}" alt="" loading="lazy"
+              ></a>
+            {%- endif %}
             <div class="research-row-text">
-              <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+              <h3>
+                <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+              </h3>
               <p>{{ p.description }}</p>
-              <a class="more-link" href="{{ p.url | relative_url }}">Read more <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+              <a class="more-link" href="{{ p.url | relative_url }}"
+                >Read more
+                <svg
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+              </a>
             </div>
           </article>
         {% endunless %}
@@ -53,10 +76,31 @@ layout: default
         <div class="study-grid">
           {% for s in studies %}
             <article class="study-card">
-              {% if s.img %}<a href="{{ s.url | relative_url }}" class="thumb" tabindex="-1" aria-hidden="true"><img src="{{ s.img | relative_url }}" alt="" loading="lazy"></a>{% endif %}
-              <h3><a href="{{ s.url | relative_url }}">{{ s.title }}</a></h3>
+              {% if s.img -%}
+                <a href="{{ s.url | relative_url }}" class="thumb" tabindex="-1" aria-hidden="true"
+                  ><img src="{{ s.img | relative_url }}" alt="" loading="lazy"
+                ></a>
+              {%- endif %}
+              <h3>
+                <a href="{{ s.url | relative_url }}">{{ s.title }}</a>
+              </h3>
               <p>{{ s.description }}</p>
-              <a class="more-link" href="{{ s.url | relative_url }}">Read more <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+              <a class="more-link" href="{{ s.url | relative_url }}"
+                >Read more
+                <svg
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+              </a>
             </article>
           {% endfor %}
         </div>
@@ -74,6 +118,21 @@ layout: default
   {% endif %}
 
   {% if parent %}
-    <a class="more-link back-link" href="{{ parent.url | relative_url }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg> Back to {{ parent.title }}</a>
+    <a class="more-link back-link" href="{{ parent.url | relative_url }}">
+      <svg
+        aria-hidden="true"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M11 6l-6 6 6 6"></path>
+      </svg>
+      Back to {{ parent.title -}}
+    </a>
   {% endif %}
 </div>

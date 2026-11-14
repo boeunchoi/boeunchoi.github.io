@@ -92,7 +92,6 @@
   border-color: #dfe7ed;
 }
 
-
 .link-box:hover {
   background-color: var(--global-theme-color) !important;
   color: var(--global-bg-color);
@@ -131,11 +130,23 @@ html[data-theme="dark"] #light-toggle .icon-sun {
 /* ---------- Redesign (Nov 2026): type, nav, home title ---------- */
 
 body {
-  font-family: "General Sans", "Apple SD Gothic Neo", "Noto Sans KR", -apple-system, "Segoe UI", sans-serif;
+  font-family:
+    "General Sans",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6, .post-title {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title {
   font-family: inherit;
   font-weight: 400;
 }
@@ -205,7 +216,7 @@ html[data-theme="dark"] .accent-rule {
 .research-page .post-title {
   font-size: 2.75rem;
   line-height: 1.08;
-  letter-spacing: 0.0em;
+  letter-spacing: 0em;
   margin-bottom: 0;
 }
 
@@ -364,11 +375,11 @@ html[data-theme="dark"] .accent-rule {
   margin-top: 0.75rem;
   font-size: 0.95rem;
   color: var(--global-text-color-light);
-  text-align: center;   /* or left, to line up with the photo edge */
+  text-align: center; /* or left, to line up with the photo edge */
 }
 
 .about-body .more-info {
-  font-family: inherit;   /* use General Sans, not al-folio's monospace */
+  font-family: inherit; /* use General Sans, not al-folio's monospace */
 }
 
 .about-text {
@@ -380,14 +391,12 @@ html[data-theme="dark"] .accent-rule {
   line-height: 1.7;
 }
 
-
 .about-text .link-box {
   min-height: 36px;
   padding: 8px 32px;
   font-size: 0.85rem;
   border-radius: 18px;
 }
-
 
 /* Dark mode: buttons keep the soft blue; links use the clearer blue */
 html[data-theme="dark"] .link-box {
@@ -474,11 +483,15 @@ html[data-theme="dark"] .progress-bar {
 }
 
 @media (max-width: 768px) {
-  .gallery-grid { column-count: 2; }
+  .gallery-grid {
+    column-count: 2;
+  }
 }
 
 @media (max-width: 480px) {
-  .gallery-grid { column-count: 1; }
+  .gallery-grid {
+    column-count: 1;
+  }
 }
 
 .gallery-item {
@@ -495,7 +508,8 @@ html[data-theme="dark"] .progress-bar {
   display: block;
 }
 
-.gallery-item picture::after { /* same whitish veil as the research thumbnails */
+.gallery-item picture::after {
+  /* same whitish veil as the research thumbnails */
   content: "";
   position: absolute;
   inset: 0;
@@ -537,15 +551,21 @@ html[data-theme="dark"] .progress-bar {
 }
 
 @media (max-width: 992px) {
-  .gallery-grid.thumb-letter { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .gallery-grid.thumb-letter {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
-  .gallery-grid.thumb-letter { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gallery-grid.thumb-letter {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 480px) {
-  .gallery-grid.thumb-letter { grid-template-columns: 1fr; }
+  .gallery-grid.thumb-letter {
+    grid-template-columns: 1fr;
+  }
 }
 
 .gallery-grid.thumb-letter .gallery-item {
@@ -563,23 +583,35 @@ html[data-theme="dark"] .progress-bar {
 }
 
 .gallery-section .section-label {
-  font-size: 0.9rem;        /* size (shared default 0.8rem) */
-  letter-spacing: 0.16em;   /* space between letters */
-  font-weight: 500;         /* thickness */
+  font-size: 0.9rem; /* size (shared default 0.8rem) */
+  letter-spacing: 0.16em; /* space between letters */
+  font-weight: 500; /* thickness */
   color: var(--global-text-color-light);
-  text-transform: uppercase;  /* "none" to show it as you typed it */
-  margin-bottom: 0.8rem;    /* space before the description */
+  text-transform: uppercase; /* "none" to show it as you typed it */
+  margin-bottom: 0.8rem; /* space before the description */
 }
 
+.gallery-section {
+  scroll-margin-top: 80px;
+}
+html {
+  scroll-behavior: smooth;
+}
 
-.gallery-section { scroll-margin-top: 80px; }
-html { scroll-behavior: smooth; }
+.gallery-section .section-label a {
+  color: inherit;
+  text-decoration: none;
+}
+.gallery-section .section-label a:hover {
+  color: var(--global-theme-color);
+}
 
-.gallery-section .section-label a { color: inherit; text-decoration: none; }
-.gallery-section .section-label a:hover { color: var(--global-theme-color); }
-
-
-.gallery-jump { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2rem; }
+.gallery-jump {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
 .gallery-jump .link-box {
   min-height: 36px;
   padding: 8px 28px;

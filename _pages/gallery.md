@@ -21,21 +21,22 @@ nav_order: 4
     {% endfor %}
   </nav>
 
-  {% for section in site.data.gallery %}
-    {% if section.items and section.items.size > 0 %}
-      {% assign sid = section.id | default: section.title | slugify %}
-      <section class="gallery-section" id="{{ sid }}">
-        <h2 class="section-label"><a href="#{{ sid }}">{{ section.title }}</a></h2>
-        {% if section.description %}<p class="gallery-desc">{{ section.description }}</p>{% endif %}
-        <div class="gallery-grid{% if section.thumb %} thumb-{{ section.thumb }}{% endif %}">
-          {% for item in section.items %}
-            <div class="gallery-item">
-              {% include figure.liquid path=item.image alt=item.caption class="img-fluid" zoomable=true %}
-              {% if item.caption %}<p class="small-caption">{{ item.caption }}</p>{% endif %}
-            </div>
-          {% endfor %}
-        </div>
-      </section>
-    {% endif %}
-  {% endfor %}
+{% for section in site.data.gallery %}
+{% if section.items and section.items.size > 0 %}
+{% assign sid = section.id | default: section.title | slugify %}
+<section class="gallery-section" id="{{ sid }}">
+<h2 class="section-label"><a href="#{{ sid }}">{{ section.title }}</a></h2>
+{% if section.description %}<p class="gallery-desc">{{ section.description }}</p>{% endif %}
+<div class="gallery-grid{% if section.thumb %} thumb-{{ section.thumb }}{% endif %}">
+{% for item in section.items %}
+<div class="gallery-item">
+{% include figure.liquid path=item.image alt=item.caption class="img-fluid" zoomable=true %}
+{% if item.caption %}<p class="small-caption">{{ item.caption }}</p>{% endif %}
+</div>
+{% endfor %}
+</div>
+</section>
+{% endif %}
+{% endfor %}
+
 </div>

@@ -9,30 +9,30 @@ layout: default
 
   <article>
     <div class="about-body">
-    {% if page.profile %}
-      <div class="profile">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
+      {% if page.profile %}
+        <div class="profile">
+          {% if page.profile.image %}
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'img-fluid z-depth-1
       rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+            {% endif %}
+            {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
       30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid path = profile_image_path class = profile_image_class sizes = sizes alt = page.profile.image
-            cache_bust = true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
+            {%
+              include figure.liquid path = profile_image_path class = profile_image_class sizes = sizes alt = page.profile.image
+              cache_bust = true
+            %}
+          {% endif %}
+          {% if page.profile.more_info %}
+            <div class="more-info">{{ page.profile.more_info }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
 
-    <div class="clearfix about-text">{{ content }}</div>
+      <div class="clearfix about-text">{{ content }}</div>
     </div>
 
     <!-- News -->
