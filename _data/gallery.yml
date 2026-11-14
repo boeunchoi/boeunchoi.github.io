@@ -1,0 +1,34 @@
+# Gallery sections, shown in this order. A section with no items is hidden.
+# Each item: image (path from the site root).
+# Optional description: a short text under the section label (description: ...).
+# Optional thumb: letter -> every image in the section shown at letter-paper shape (8.5 x 11).
+
+- title: Science Illustrations
+  id: science-illustrations
+  description: >
+    TBU.. more comming soon!
+  items:
+    - image: assets/img/cgm/homepage_cgm_schematic.png
+
+- title: Astronomy on Tap Flyers
+  id: flyers
+  description: >
+    During my PhD at UW, I helped organize <a href="https://astronomyontap.org/">Astronomy on Tap</a> Seattle
+    (<a href="https://astro.washington.edu/astronomy-tap">more info</a>). I was grateful to contribute to this
+    amazing outreach program as a flyer designer. Here are some of the flyers I designed :)
+  thumb: letter
+  items: 
+    - image: assets/img/flyers/AoT_May_2026.png
+    - image: assets/img/flyers/AoT_Apr_2026.png
+    - image: assets/img/flyers/AoT_Mar_2026.png
+    - image: assets/img/flyers/AoT_Jan_2026.png
+    - image: assets/img/flyers/AoT_Oct_2025.png
+    - image: assets/img/flyers/AoT_Jul_2025.png
+    - image: assets/img/flyers/AoT_May_2025.png
+    - image: assets/img/flyers/AoT_Mar_2025.png
+    - image: assets/img/flyers/AoT_Oct_2024.png
+    - image: assets/img/flyers/AoT_Sep_2024.png
+    - image: assets/img/flyers/AoT_Aug_2024.png
+    - image: assets/img/flyers/AoT_Jul_2024.png
+  # Example:
+  #   - image: assets/img/gallery/aot_2025_03.png

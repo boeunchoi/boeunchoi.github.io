@@ -2,10 +2,11 @@
 
 .home-hero {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* photo on the left */
+  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  margin-top: 1.5rem;
+  gap: 4rem;
+  margin-top: 3rem;
 }
 
 /* On small screens, stack vertically */
@@ -22,9 +23,12 @@
 
 /* Make the image smaller and stop it from stretching full width */
 .home-hero-image img {
-  width: 290px !important; /* try 260–300px; adjust to taste */
-  max-width: 290px !important;
-  height: auto;
+  width: 320px !important;
+  max-width: 320px !important;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0 !important; /* square corners */
+  box-shadow: none !important;
   display: block;
 }
 
@@ -35,67 +39,64 @@
 }
 
 /* Home social icons: base style */
+.home-social .contact-icons {
+  display: flex;
+  gap: 4px;
+  margin-left: -12px; /* line the first icon up with the text */
+}
+
 .home-social .contact-icons a {
-  color: #000000 !important; /* black */
-  font-size: 1.8rem; /* icon size (1.4–1.8 is a good range) */
-  margin: 0 8px; /* spacing between icons */
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--global-text-color-light) !important;
   text-decoration: none;
+}
+
+.home-social .contact-note {
+  font-size: 1.05rem;
+  color: var(--global-text-color-light);
 }
 
 /* Hover: turn icons blue */
 .home-social .contact-icons a:hover,
 .home-social .contact-icons a:focus {
-  color: #1f66b6 !important; /* blue on hover */
-}
-
-/* Dark mode: make icons white/light-gray */
-html[data-theme="dark"] .home-social .contact-icons a {
-  color: #e5e5e5 !important; /* or #ffffff for pure white */
-}
-
-/* Dark mode: hover */
-html[data-theme="dark"] .home-social .contact-icons a:hover,
-html[data-theme="dark"] .home-social .contact-icons a:focus {
-  color: #2998e7 !important;
+  color: var(--global-theme-color) !important;
 }
 
 /* Container for box links */
 .link-boxes {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 1.5rem 0;
+  gap: 12px;
+  margin: 2rem 0 1rem;
 }
 
 /* Base look for each box */
 .link-box {
-  padding: 5px 33px;
-  border: 1.9px solid #000; /* black border – change to #3182ce for blue */
-  border-radius: 0; /* sharp edges */
-  font-size: 0.92rem;
-  color: #000;
+  min-height: 44px;
+  padding: 10px 36px;
+  border: 1.2px solid var(--global-theme-color);
+  border-radius: 0; /* square corners */
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  color: var(--global-theme-color);
   text-decoration: none;
   transition: all 0.2s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #dfe7ed; /* soft fill (light mode), was #e3ecf2 */
+  border-color: #dfe7ed;
 }
 
-/* Hover effect */
+
 .link-box:hover {
-  background-color: transparent !important;
-  color: #1f66b6;
-  border-color: #1f66b6;
-}
-
-/* Dark mode */
-html[data-theme="dark"] .link-box {
-  border-color: #e5e5e5; /* light gray border */
-  color: #e5e5e5; /* light gray text */
-}
-
-html[data-theme="dark"] .link-box:hover {
-  background-color: transparent !important;
-  color: #2998e7;
-  border-color: #2998e7;
+  background-color: var(--global-theme-color) !important;
+  color: var(--global-bg-color);
+  border-color: var(--global-theme-color);
 }
 
 /* Remove underline from link boxes in all states */
@@ -108,32 +109,480 @@ html[data-theme="dark"] .link-box:hover {
   text-decoration: none !important;
 }
 
-#light-toggle i {
+/* Theme toggle: line-style moon (in light mode) / sun (in dark mode) */
+#light-toggle {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--global-text-color-light);
+}
+
+#light-toggle svg {
   display: none;
 }
 
-html[data-theme="light"] #light-toggle .fa-moon {
-  display: inline-block;
+html:not([data-theme="dark"]) #light-toggle .icon-moon,
+html[data-theme="dark"] #light-toggle .icon-sun {
+  display: block;
 }
 
-html[data-theme="dark"] #light-toggle .fa-lightbulb {
-  display: inline-block;
+/* ---------- Redesign (Nov 2026): type, nav, home title ---------- */
+
+body {
+  font-family: "General Sans", "Apple SD Gothic Neo", "Noto Sans KR", -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
 }
 
-#light-toggle i {
+h1, h2, h3, h4, h5, h6, .post-title {
+  font-family: inherit;
+  font-weight: 400;
+}
+
+/* Top bar: name + lowercase menu, current page underlined */
+.navbar.navbar-light .navbar-brand {
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  color: var(--global-text-color-light);
+  font-size: 1.2rem;
+  letter-spacing: 0em;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  font-weight: 400;
+  color: var(--global-text-color);
+  text-decoration: none; /* no underline on the current page */
+  text-decoration-color: #9fb8c8; /* soft, muted blue */
+  text-decoration-thickness: 0.5px; /* hairline on high-res screens */
+  text-underline-offset: 6px;
+}
+
+html[data-theme="dark"] .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  text-decoration-color: #7d93a3;
+}
+
+/* Home: name, accent rule, subtitle */
+.post .home-hero .post-title {
+  font-size: 3rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  color: #3a4248;
+}
+
+html[data-theme="dark"] .post .home-hero .post-title {
+  color: #e6eaed;
+}
+
+.accent-rule {
+  width: 75px;
+  height: 1.5px;
+  margin: 1.2rem 0;
+  background: #9fb8c8; /* soft, muted blue (same as the menu underline) */
+}
+
+html[data-theme="dark"] .accent-rule {
+  background: #7d93a3;
+}
+
+.post .home-hero .desc {
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--global-text-color-light);
+}
+
+/* ---------- Research pages (Nov 2026) ---------- */
+
+.research-page .post-header {
+  margin-bottom: 1.5rem;
+}
+
+.research-page .post-title {
+  font-size: 2.75rem;
+  line-height: 1.08;
+  letter-spacing: 0.0em;
+  margin-bottom: 0;
+}
+
+.research-page .accent-rule {
+  margin: 1.25rem 0 0;
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.crumbs a,
+.crumbs span {
+  color: var(--global-text-color-light);
+}
+
+.research-text {
+  max-width: 900px;
+  font-size: 1.05rem;
+  letter-spacing: 0em;
+  line-height: 1.7;
+}
+
+.section-label {
+  margin: 3.5rem 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+
+.more-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--global-theme-color);
+}
+
+.more-link:hover {
+  text-decoration: none;
+  color: var(--global-hover-color);
+}
+
+/* Research: one row per project */
+.research-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.research-row .thumb {
+  flex: 0 0 360px;
+  max-width: 100%;
+}
+
+.research-row img {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* rectangular thumbnail */
+  object-fit: cover;
+  display: block;
+}
+
+.research-row-text {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.research-row h3,
+.study-card h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+}
+
+.research-row h3 a,
+.study-card h3 a {
+  color: var(--global-text-color);
+}
+
+.research-row p,
+.study-card p {
+  color: var(--global-text-color-light);
+  margin-bottom: 0.25rem;
+}
+
+/* Theme overview: grid of study cards */
+.study-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* three per row; raise 240px for bigger cards */
+  gap: 3rem;
+}
+
+.study-card .thumb {
+  margin-bottom: 1rem;
+}
+
+.study-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* square thumbnail */
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--global-divider-color);
+}
+
+/* Study page figures (moved from inline styles) */
+.original-ratio {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.small-caption {
+  font-size: 0.88rem;
+  color: var(--global-text-color-light);
+}
+
+.back-link {
+  margin-top: 2rem;
+}
+
+/* ---------- About page (Nov 2026): photo left, text right ---------- */
+.about-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.about-body .profile {
+  flex: 0 0 280px;
+  width: 280px;
+  margin: 0;
+}
+
+.about-body .profile img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 0 !important; /* square corners, like home */
+  box-shadow: none !important;
+}
+
+.about-body .more-info .photo-name {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  text-align: center;   /* or left, to line up with the photo edge */
+}
+
+.about-body .more-info {
+  font-family: inherit;   /* use General Sans, not al-folio's monospace */
+}
+
+.about-text {
+  flex: 1 1 360px;
+  min-width: 0;
+  max-width: 640px;
+  font-size: 1.05rem;
+  letter-spacing: 0em;
+  line-height: 1.7;
+}
+
+
+.about-text .link-box {
+  min-height: 36px;
+  padding: 8px 32px;
+  font-size: 0.85rem;
+  border-radius: 18px;
+}
+
+
+/* Dark mode: buttons keep the soft blue; links use the clearer blue */
+html[data-theme="dark"] .link-box {
+  background-color: #3a4650; /* soft fill (dark mode) */
+  border-color: #3a4650;
+  color: #a9c8db;
+}
+
+html[data-theme="dark"] .link-box:hover {
+  background-color: #a9c8db !important;
+  border-color: #a9c8db;
+  color: var(--global-bg-color);
+}
+
+/* Scroll progress line under the top bar: soft blue (light), muted grey-blue (dark) */
+progress {
+  color: #9fb8c8;
+}
+progress::-webkit-progress-value {
+  background-color: #9fb8c8;
+}
+progress::-moz-progress-bar {
+  background-color: #9fb8c8;
+}
+.progress-bar {
+  background-color: #9fb8c8;
+}
+
+html[data-theme="dark"] progress {
+  color: #66788a;
+}
+html[data-theme="dark"] progress::-webkit-progress-value {
+  background-color: #66788a;
+}
+html[data-theme="dark"] progress::-moz-progress-bar {
+  background-color: #66788a;
+}
+html[data-theme="dark"] .progress-bar {
+  background-color: #66788a;
+}
+
+/* Thumbnails: whitish veil on hover */
+.thumb {
+  position: relative;
+  display: block;
+}
+
+.thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.thumb:hover::after {
+  opacity: 0.3; /* raise for whiter, lower for subtler */
+}
+
+/* Related papers on study pages: no thumbnails, lighter titles */
+.related-papers .publications .row > .col-sm-2 {
   display: none;
-  vertical-align: middle;
-  line-height: 1;
-  position: relative; /* keep relative if you want fine tuning */
-  top: 0; /* important: no global push */
 }
 
-html[data-theme="light"] #light-toggle .fa-moon {
-  display: inline-block;
+.related-papers .publications .row > [id] {
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
-html[data-theme="dark"] #light-toggle .fa-lightbulb {
-  display: inline-block;
-  top: 6.5px; /* adjust only bulb; try 1–3px */
-  margin-left: 0.62rem;
+.related-papers .publications .title {
+  font-weight: 500 !important; /* al-folio sets bolder; 400 for regular */
+}
+
+.related-papers .publications {
+  margin-top: 0; /* al-folio adds 2rem; the label's own margin (~12px) remains */
+}
+
+/* ---------- Gallery (Nov 2026): images in their own shape, click to zoom ---------- */
+.gallery-grid {
+  column-count: 3; /* masonry-style columns keep each image's own shape */
+  column-gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .gallery-grid { column-count: 2; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { column-count: 1; }
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-item figure {
+  margin: 0;
+}
+
+.gallery-item picture {
+  position: relative;
+  display: block;
+}
+
+.gallery-item picture::after { /* same whitish veil as the research thumbnails */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.gallery-item picture:hover::after {
+  opacity: 0.3;
+}
+
+.gallery-item .small-caption {
+  margin: 0.5rem 0 0;
+}
+
+.gallery-desc {
+  max-width: 920px;
+  margin: 0 0 1.25rem;
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+  letter-spacing: 0em;
+}
+
+/* Gallery sections with thumb: letter -> same letter-paper shape for every piece */
+.gallery-grid.thumb-letter img {
+  width: 100%;
+  aspect-ratio: 8.5 / 11;
+  object-fit: cover;
+}
+
+/* Same-shape sections: a regular grid so pieces read left-to-right, newest first */
+.gallery-grid.thumb-letter {
+  column-count: initial;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 per row on desktop */
+  gap: 1.25rem;
+}
+
+@media (max-width: 992px) {
+  .gallery-grid.thumb-letter { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid.thumb-letter { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid.thumb-letter { grid-template-columns: 1fr; }
+}
+
+.gallery-grid.thumb-letter .gallery-item {
+  margin-bottom: 0;
+}
+
+/* Gallery: thin dividing line between sections */
+.gallery-section + .gallery-section {
+  margin-top: 3rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.gallery-section + .gallery-section .section-label {
+  margin-top: 2rem; /* space between the line and the next label */
+}
+
+.gallery-section .section-label {
+  font-size: 0.9rem;        /* size (shared default 0.8rem) */
+  letter-spacing: 0.16em;   /* space between letters */
+  font-weight: 500;         /* thickness */
+  color: var(--global-text-color-light);
+  text-transform: uppercase;  /* "none" to show it as you typed it */
+  margin-bottom: 0.8rem;    /* space before the description */
+}
+
+
+.gallery-section { scroll-margin-top: 80px; }
+html { scroll-behavior: smooth; }
+
+.gallery-section .section-label a { color: inherit; text-decoration: none; }
+.gallery-section .section-label a:hover { color: var(--global-theme-color); }
+
+
+.gallery-jump { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2rem; }
+.gallery-jump .link-box {
+  min-height: 36px;
+  padding: 8px 28px;
+  font-size: 0.85rem;
+  border-radius: 18px;
 }

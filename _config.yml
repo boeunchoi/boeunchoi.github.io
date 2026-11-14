@@ -10,8 +10,6 @@ email: bechoi@uw.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Bo-Eun (Bonni) Choi's personal website.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: [en, kr] # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: hp_icon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -46,10 +44,10 @@ rss_icon: true
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 
 # Dimensions
-max_width: 800px
+max_width: 1000px
 
 # TODO: add layout settings (single page vs. multi-page)
 

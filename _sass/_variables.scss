@@ -36,10 +36,27 @@ $grey-purple-color: #d5c7e3 !default;
 $my-blue-color: #1f66b6 !default;
 $my-dark-blue-color: #2998e7 !default;
 
+// Redesign palette (Nov 2026)
+$bo-bg-light: #f3f4f4;
+$bo-text-light: #5f686f; /* was #555e65 */
+$bo-muted-light: #68717a; /* was #5f6971; keep lighter than the main text */
+$bo-accent-light: #336c8f;
+$bo-hover-light: #275470;
+$bo-line-light: #dcdfe1;
+$bo-card-light: #ffffff;
+
+$bo-bg-dark: #2c3034;
+$bo-text-dark: #e6eaed; /* was #dadfe3 */
+$bo-muted-dark: #b8c0c6; /* was #a3abb2 */
+$bo-accent-dark: #7ab8e6; /* links: clearer blue (was #a9c8db, earlier #93b6cb) */
+$bo-hover-dark: #a9d3f3;
+$bo-line-dark: #40464c;
+$bo-card-dark: #33383d;
+
 // Theme colors
 
-$code-bg-color-light: rgba($my-dark-blue-color, 0.1);
-$code-bg-color-dark: #333a41 !default;
+$code-bg-color-light: rgba($bo-accent-light, 0.08);
+$code-bg-color-dark: #363b40 !default;
 
 // Font awesome location
 $fa-font-path: "../webfonts";

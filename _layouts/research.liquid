@@ -1,0 +1,79 @@
+---
+layout: default
+---
+{% comment %}
+  Research pages (redesign, Nov 2026).
+  - /research/ lists projects with category: research and no parent.
+  - A project lists its studies: projects whose `parent` is its file name (e.g. parent: mwcgm).
+  - A study shows a breadcrumb back to its parent and, with related_publications: true,
+    the papers cited in its text via {% raw %}{% cite key %}{% endraw %}.
+{% endcomment %}
+{% assign parent = nil %}
+{% if page.parent %}
+  {% assign parent = site.projects | where: 'slug', page.parent | first %}
+{% endif %}
+<div class="post research-page">
+  <header class="post-header">
+    {% if page.collection == 'projects' %}
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="{{ '/research/' | relative_url }}">Research</a><span aria-hidden="true">/</span>
+        {% if parent %}<a href="{{ parent.url | relative_url }}">{{ parent.title }}</a><span aria-hidden="true">/</span>{% endif %}
+      </nav>
+    {% endif %}
+    <h1 class="post-title">{{ page.heading | default: page.title }}</h1>
+    <div class="accent-rule"></div>
+  </header>
+
+  <article class="research-text">
+    {{ content }}
+  </article>
+
+  {% if page.collection != 'projects' %}
+    {% assign projects = site.projects | where: 'category', 'research' | sort: 'importance' %}
+    <section class="research-list">
+      <h2 class="section-label">Interests</h2>
+      {% for p in projects %}
+        {% unless p.parent %}
+          <article class="research-row">
+            {% if p.img %}<a href="{{ p.url | relative_url }}" class="thumb" tabindex="-1" aria-hidden="true"><img src="{{ p.img | relative_url }}" alt="" loading="lazy"></a>{% endif %}
+            <div class="research-row-text">
+              <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+              <p>{{ p.description }}</p>
+              <a class="more-link" href="{{ p.url | relative_url }}">Read more <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </article>
+        {% endunless %}
+      {% endfor %}
+    </section>
+  {% else %}
+    {% assign studies = site.projects | where: 'parent', page.slug | sort: 'importance' %}
+    {% if studies.size > 0 %}
+      <section class="study-list">
+        <h2 class="section-label">Studies</h2>
+        <div class="study-grid">
+          {% for s in studies %}
+            <article class="study-card">
+              {% if s.img %}<a href="{{ s.url | relative_url }}" class="thumb" tabindex="-1" aria-hidden="true"><img src="{{ s.img | relative_url }}" alt="" loading="lazy"></a>{% endif %}
+              <h3><a href="{{ s.url | relative_url }}">{{ s.title }}</a></h3>
+              <p>{{ s.description }}</p>
+              <a class="more-link" href="{{ s.url | relative_url }}">Read more <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endif %}
+
+  {% if page.related_publications %}
+    <section class="related-papers">
+      <h2 class="section-label">Related papers</h2>
+      <div class="publications">
+        {% bibliography --cited_in_order %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if parent %}
+    <a class="more-link back-link" href="{{ parent.url | relative_url }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg> Back to {{ parent.title }}</a>
+  {% endif %}
+</div>
