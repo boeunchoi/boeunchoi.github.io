@@ -24,6 +24,7 @@ nav_order: 4
 {% for section in site.data.gallery %}
 {% if section.items and section.items.size > 0 %}
 {% assign sid = section.id | default: section.title | slugify %}
+
 <section class="gallery-section" id="{{ sid }}">
 <h2 class="section-label"><a href="#{{ sid }}">{{ section.title }}</a></h2>
 {% if section.description %}<p class="gallery-desc">{{ section.description }}</p>{% endif %}

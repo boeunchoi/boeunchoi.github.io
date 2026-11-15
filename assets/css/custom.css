@@ -131,13 +131,13 @@ html[data-theme="dark"] #light-toggle .icon-sun {
 
 body {
   font-family:
-    "General Sans",
+    "Lato",
     "Apple SD Gothic Neo",
     "Noto Sans KR",
     -apple-system,
     "Segoe UI",
-    sans-serif;
-  font-weight: 400;
+    sans-serif; /* was "General Sans" */
+  font-weight: 300; /* Lato Light; was 400 */
 }
 
 h1,
@@ -151,7 +151,7 @@ h6,
   font-weight: 400;
 }
 
-/* Top bar: name + lowercase menu, current page underlined */
+/* Top bar */
 .navbar.navbar-light .navbar-brand {
   font-weight: 400;
   letter-spacing: 0em;
@@ -159,8 +159,9 @@ h6,
 
 .navbar.navbar-light .navbar-nav .nav-item .nav-link {
   color: var(--global-text-color-light);
-  font-size: 1.2rem;
-  letter-spacing: 0em;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  /* text-transform: uppercase; ABOUT, RESEARCH, GALLERY; "capitalize" for About, delete for lowercase */
 }
 
 .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
@@ -178,9 +179,9 @@ html[data-theme="dark"] .navbar.navbar-light .navbar-nav .nav-item.active > .nav
 
 /* Home: name, accent rule, subtitle */
 .post .home-hero .post-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin-top: 2rem;
   margin-bottom: 0;
   color: #3a4248;
@@ -202,7 +203,7 @@ html[data-theme="dark"] .accent-rule {
 }
 
 .post .home-hero .desc {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.55;
   color: var(--global-text-color-light);
 }
@@ -214,10 +215,16 @@ html[data-theme="dark"] .accent-rule {
 }
 
 .research-page .post-title {
-  font-size: 2.75rem;
+  font-size: 2.4rem; /* was 2.75rem */
   line-height: 1.08;
-  letter-spacing: 0em;
+  letter-spacing: -0.01em;
   margin-bottom: 0;
+  /* text-transform: lowercase; */ /* uncomment for "research" */
+  color: #5a6d7b; /* blue-grey title; was #6b7e8c, #7b8d9a */
+}
+
+html[data-theme="dark"] .research-page .post-title {
+  color: #a7b6c2; /* blue-grey title (dark mode) */
 }
 
 .research-page .accent-rule {
@@ -241,8 +248,8 @@ html[data-theme="dark"] .accent-rule {
 
 .research-text {
   max-width: 900px;
-  font-size: 1.05rem;
-  letter-spacing: 0em;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
   line-height: 1.7;
 }
 
@@ -386,8 +393,8 @@ html[data-theme="dark"] .accent-rule {
   flex: 1 1 360px;
   min-width: 0;
   max-width: 640px;
-  font-size: 1.05rem;
-  letter-spacing: 0em;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
   line-height: 1.7;
 }
 

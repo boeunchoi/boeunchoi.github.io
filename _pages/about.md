@@ -25,7 +25,7 @@ I'm a postdoctoral researcher in Astronomy at the University of Washington. My p
 
 I received my Ph.D. from the University of Washington in 2026, advised by Prof. Jessica Werk, and before that attended Sejong University. I am originally from Seoul, Korea.
 
-Please feel free to reach out to me at my email: bechoi@uw.edu
+Please feel free to reach out to me at my email: **bechoi@uw.edu**
 
 <!-- <br>
 The 12-year-old me had no idea I would become an astronomer. I went to an art school in Korea, dreaming of being a painter. The only thing I knew clearly was that I admired nature and wanted to find its beauty and show it to others. Over time, I found myself enjoying observing nature and studying the principles that make it beautiful more than expressing it on canvas, which led me to science. I still dream the same dream. I deeply admire the Universe, I try to understand it, and I hope my tiny findings can show people a pebble of our Universe. -->
