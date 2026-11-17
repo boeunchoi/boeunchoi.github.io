@@ -297,6 +297,18 @@ html[data-theme="dark"] .research-page .post-title {
   display: block;
 }
 
+/* img_fit: contain in a project's front matter -> whole image, no cropping */
+.research-row img.fit-contain {
+  object-fit: contain;
+}
+
+/* Transparent figures with dark lines: light panel behind them in dark mode only.
+   Page figure: class="img-fluid on-light"; thumbnail: img_bg: light in front matter */
+html[data-theme="dark"] img.on-light {
+  background-color: #dfe4e8;
+  padding: 0.75rem;
+}
+
 .research-row-text {
   flex: 1 1 320px;
   min-width: 0;

@@ -1,7 +1,7 @@
 ---
 layout: research
 title: Nature of the Milky Way Disk-Halo Interface
-img: assets/img/cgm/DHI.png
+img: assets/img/cgm/DHI_thumb.png # trimmed copy of DHI.png (no transparent edge)
 parent: mwcgm
 category: study
 importance: 1

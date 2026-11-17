@@ -1,0 +1,245 @@
+diff --git a/_data/gallery.yml b/_data/gallery.yml
+index 38d2aa0..dae8ec9 100644
+--- a/_data/gallery.yml
++++ b/_data/gallery.yml
+@@ -1,6 +1,7 @@
+ # Gallery sections, shown in this order. A section with no items is hidden.
+ # Each item: image (path from the site root).
+ # Optional description: a short text under the section label (description: ...).
++# Korean page (/ko/gallery/): add title_ko: and description_ko: to a section; without them the English text is used.
+ # Optional thumb: letter -> every image in the section shown at letter-paper shape (8.5 x 11).
+ 
+ - title: Science Illustrations
+diff --git a/_includes/head.liquid b/_includes/head.liquid
+index 5863af5..d87533b 100644
+--- a/_includes/head.liquid
++++ b/_includes/head.liquid
+@@ -18,7 +18,7 @@
+ <link rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url | bust_file_cache }}">
+ <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+ <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap">
+-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
++<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap">
+ <!-- Satoshi (previous): https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+ 
+diff --git a/_includes/header.liquid b/_includes/header.liquid
+index 89aa2d4..685569c 100644
+--- a/_includes/header.liquid
++++ b/_includes/header.liquid
+@@ -1,9 +1,10 @@
+ <header>
++  {% assign cur_lang = page.lang | default: 'en' %}
+   <!-- Nav Bar -->
+   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
+     <div class="container">
+-      {% if page.permalink != '/' %}
+-        <a class="navbar-brand title" href="{{ site.baseurl }}/">
++      {% if page.permalink != '/' and page.permalink != '/ko/' %}
++        <a class="navbar-brand title" href="{% if cur_lang == 'ko' %}{{ '/ko/' | relative_url }}{% else %}{{ site.baseurl }}/{% endif %}">
+           {% if site.title == 'blank' %}
+             Bonni
+           {% else %}
+@@ -35,7 +36,8 @@
+           <!-- Other pages -->
+           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+           {% for p in sorted_pages %}
+-            {% if p.nav and p.autogen == null %}
++            {% assign p_lang = p.lang | default: 'en' %}
++            {% if p.nav and p.autogen == null and p_lang == cur_lang %}
+               {% if p.dropdown %}
+                 {% assign has_active_child = false %}
+                 {% for child in p.children %}
+@@ -83,6 +85,33 @@
+               {% endif %}
+             {% endif %}
+           {% endfor %}
++          <!-- Language switch: EN <-> 한 (Korean pages live under /ko/) -->
++          {% if cur_lang == 'ko' %}
++            {% assign other_url = page.url | remove_first: '/ko' %}
++          {% else %}
++            {% assign other_url = '/ko' | append: page.url %}
++            {% assign other_hits = site.pages | where: 'url', other_url %}
++            {% if other_hits.size == 0 %}
++              {% if page.collection == 'projects' %}
++                {% assign other_url = '/ko/research/' %}
++              {% else %}
++                {% assign other_url = '/ko/' %}
++              {% endif %}
++            {% endif %}
++          {% endif %}
++          <li class="lang-container">
++            <a
++              class="lang-switch{% if cur_lang == 'ko' %} is-ko{% endif %}"
++              href="{{ other_url | relative_url }}"
++              hreflang="{% if cur_lang == 'ko' %}en{% else %}ko{% endif %}"
++              title="{% if cur_lang == 'ko' %}English{% else %}한국어{% endif %}"
++              aria-label="{% if cur_lang == 'ko' %}Switch to English{% else %}한국어로 보기{% endif %}"
++            >
++              <span class="lang-label lang-en">EN</span>
++              <span class="lang-track"><span class="lang-knob"></span></span>
++              <span class="lang-label lang-ko">한</span>
++            </a>
++          </li>
+           {% if site.enable_darkmode %}
+             <!-- Toogle theme mode -->
+             <li class="toggle-container">
+@@ -122,6 +151,16 @@
+       </div>
+     </div>
+   </nav>
++  <script>
++    // Slide the language knob, then go to the other language's page
++    document.addEventListener('click', function (e) {
++      var a = e.target.closest('.lang-switch');
++      if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
++      e.preventDefault();
++      a.classList.toggle('is-ko');
++      setTimeout(function () { window.location.href = a.href; }, 200);
++    });
++  </script>
+   {% if site.enable_progressbar %}
+     <!-- Scrolling Progress Bar -->
+     <progress id="progress" value="0">
+diff --git a/_layouts/default.liquid b/_layouts/default.liquid
+index 4a70872..4cb4b7a 100644
+--- a/_layouts/default.liquid
++++ b/_layouts/default.liquid
+@@ -1,5 +1,5 @@
+ <!doctype html>
+-<html lang="{{ site.lang }}">
++<html lang="{{ page.lang | default: site.lang }}">
+   <!-- Head -->
+   <head>
+     {% if page.redirect %}
+diff --git a/_layouts/home.liquid b/_layouts/home.liquid
+index 29ded4f..02ae335 100644
+--- a/_layouts/home.liquid
++++ b/_layouts/home.liquid
+@@ -30,7 +30,9 @@ layout: default
+         <div class="home-hero-text">
+           <header class="post-header">
+             <h1 class="post-title">
+-              {% if site.title == 'blank' %}
++              {% if page.display_name %}
++                {{ page.display_name }}
++              {% elsif site.title == 'blank' %}
+                 {{ site.first_name }}
+                 {{ site.middle_name }}
+                 {{ site.last_name }}
+diff --git a/_pages/gallery.md b/_pages/gallery.md
+index 66ec4fa..6ad3117 100644
+--- a/_pages/gallery.md
++++ b/_pages/gallery.md
+@@ -1,43 +1,8 @@
+ ---
+-layout: default
++layout: gallery
+ title: gallery
++heading: Gallery # page heading
+ permalink: /gallery/
+-nav: true # hidden from the menu until ready; set to true to show it
++nav: true
+ nav_order: 4
+ ---
+-
+-<div class="post research-page">
+-  <header class="post-header">
+-    <h1 class="post-title">Gallery</h1>
+-    <div class="accent-rule"></div>
+-  </header>
+-
+-  <nav class="gallery-jump">
+-    {% for section in site.data.gallery %}
+-      {% if section.items and section.items.size > 0 %}
+-        {% assign sid = section.id | default: section.title | slugify %}
+-        <a class="link-box" href="#{{ sid }}">{{ section.title }}</a>
+-      {% endif %}
+-    {% endfor %}
+-  </nav>
+-
+-{% for section in site.data.gallery %}
+-{% if section.items and section.items.size > 0 %}
+-{% assign sid = section.id | default: section.title | slugify %}
+-
+-<section class="gallery-section" id="{{ sid }}">
+-<h2 class="section-label"><a href="#{{ sid }}">{{ section.title }}</a></h2>
+-{% if section.description %}<p class="gallery-desc">{{ section.description }}</p>{% endif %}
+-<div class="gallery-grid{% if section.thumb %} thumb-{{ section.thumb }}{% endif %}">
+-{% for item in section.items %}
+-<div class="gallery-item">
+-{% include figure.liquid path=item.image alt=item.caption class="img-fluid" zoomable=true %}
+-{% if item.caption %}<p class="small-caption">{{ item.caption }}</p>{% endif %}
+-</div>
+-{% endfor %}
+-</div>
+-</section>
+-{% endif %}
+-{% endfor %}
+-
+-</div>
+diff --git a/assets/css/custom.css b/assets/css/custom.css
+index b2de7a8..a8336aa 100644
+--- a/assets/css/custom.css
++++ b/assets/css/custom.css
+@@ -625,3 +625,60 @@ html {
+   font-size: 0.85rem;
+   border-radius: 18px;
+ }
++
++/* ---------- Language switch (EN <-> 한) in the menu bar ---------- */
++.lang-container {
++  display: flex;
++  align-items: center;
++  margin-left: 0.75rem;
++}
++
++.lang-switch {
++  display: inline-flex;
++  align-items: center;
++  gap: 6px;
++  min-height: 44px; /* easy to tap */
++  font-size: 0.8rem;
++  letter-spacing: 0.04em;
++  text-decoration: none !important;
++}
++
++.lang-label {
++  color: var(--global-text-color-light);
++  opacity: 0.55;
++  transition: opacity 0.2s ease, color 0.2s ease;
++}
++
++.lang-switch:not(.is-ko) .lang-en,
++.lang-switch.is-ko .lang-ko {
++  color: var(--global-text-color);
++  opacity: 1;
++}
++
++.lang-track {
++  position: relative;
++  width: 30px;
++  height: 16px;
++  border: 1.2px solid var(--global-text-color-light);
++  border-radius: 999px;
++  opacity: 0.8;
++}
++
++.lang-knob {
++  position: absolute;
++  top: 2px;
++  left: 2px;
++  width: 10px;
++  height: 10px;
++  border-radius: 50%;
++  background: var(--global-theme-color);
++  transition: transform 0.2s ease;
++}
++
++.lang-switch.is-ko .lang-knob {
++  transform: translateX(14px);
++}
++
++.lang-switch:hover .lang-track {
++  border-color: var(--global-theme-color);
++}

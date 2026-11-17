@@ -19,7 +19,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-Hi! I'm Bo-Eun (보은), Bonni for short.
+Hello! I'm Bo-Eun (보은), Bonni for short.
 
 I'm a postdoctoral researcher in Astronomy at the University of Washington. My primary [research interest](/research/) is gas flows in galaxies' atmospheres and their impact on galaxy evolution. I study resolved gas flows around the Milky Way to understand how much metal these flows carry, how they mix in the halo, and how they connect to Galactic star formation. Spectroscopy is my favorite tool for finding clues to these cosmic scenes.
 

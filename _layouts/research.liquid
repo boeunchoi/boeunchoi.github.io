@@ -39,7 +39,13 @@ layout: default
           <article class="research-row">
             {% if p.img -%}
               <a href="{{ p.url | relative_url }}" class="thumb" tabindex="-1" aria-hidden="true"
-                ><img src="{{ p.img | relative_url }}" alt="" loading="lazy"
+                ><img
+                  src="{{ p.img | relative_url }}"
+                  alt=""
+                  loading="lazy"
+                  {% if p.img_fit == 'contain' or p.img_bg == 'light' %}
+                    class="{% if p.img_fit == 'contain' %}fit-contain{% endif %}{% if p.img_bg == 'light' %} on-light{% endif %}"
+                  {% endif %}
               ></a>
             {%- endif %}
             <div class="research-row-text">

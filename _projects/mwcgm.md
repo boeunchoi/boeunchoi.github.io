@@ -3,6 +3,7 @@ layout: research
 title: Milky Way CGM
 description: Probing the gaseous halo of the Milky Way
 img: assets/img/cgm/plank_mw.png
+img_fit: contain
 importance: 1
 category: research
 permalink: /research/mwcgm/
