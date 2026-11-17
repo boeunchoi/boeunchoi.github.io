@@ -1,0 +1,92 @@
+---
+layout: default
+---
+<div class="post research-page outreach-page">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.heading | default: page.title }}</h1>
+    <div class="accent-rule"></div>
+  </header>
+
+  <article class="research-text">
+    {{ content }}
+  </article>
+
+  {% comment %} Posts: any post with "outreach" in its categories. Hidden until the first one exists. {% endcomment %}
+  {% assign outreach_posts = site.posts | where_exp: 'p', "p.categories contains 'outreach'" %}
+  {% if outreach_posts.size > 0 %}
+    <h2 class="section-label">Posts</h2>
+    <div class="study-grid">
+      {% for p in outreach_posts %}
+        <article class="study-card">
+          {% if p.img -%}
+            <a href="{{ p.url | relative_url }}" class="thumb" tabindex="-1" aria-hidden="true"
+              ><img src="{{ p.img | relative_url }}" alt="" loading="lazy"
+            ></a>
+          {%- endif %}
+          <p class="post-meta-line">
+            {{ p.date | date: '%b %Y' -}}
+            {%- if p.tags.size > 0 %} · {{ p.tags | first }}{% endif %}
+          </p>
+          <h3>
+            <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+          </h3>
+        </article>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% assign activity_pages = site.outreach | sort: 'order' %}
+  {% if activity_pages.size > 0 %}
+    <h2 class="section-label">Activities</h2>
+    <div class="study-grid">
+      {% for a in activity_pages %}
+        <article class="study-card">
+          {% if a.img -%}
+            <a href="{{ a.url | relative_url }}" class="thumb" tabindex="-1" aria-hidden="true"
+              ><img src="{{ a.img | relative_url }}" alt="" loading="lazy"
+            ></a>
+          {%- endif %}
+          <h3>
+            <a href="{{ a.url | relative_url }}">{{ a.title }}</a>
+          </h3>
+          <p>
+            {{ a.role -}}
+            {%- if a.role and a.years %} · {% endif -%}
+            {{- a.years }}
+          </p>
+        </article>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if site.data.outreach %}
+    <h2 class="section-label">
+      {% if activity_pages.size > 0 %}More activities{% else %}Activities{% endif %}
+    </h2>
+    <ul class="activity-list">
+      {% for a in site.data.outreach %}
+        {% assign a_title = a.title | markdownify | remove: '<p>' | remove: '</p>' | strip %}
+        <li class="activity{% if a.img %} has-img{% endif %}">
+          {% if a.img %}
+            <span class="activity-img"><img src="{{ a.img | relative_url }}" alt="" loading="lazy" data-zoomable></span>
+          {% endif %}
+          <div class="activity-body">
+            <div class="activity-head">
+              <span class="activity-title">
+                {%- if a.link -%}
+                  <a href="{{ a.link | relative_url }}">{{ a_title }}</a>
+                {%- else -%}
+                  {{ a_title }}
+                {%- endif -%}
+              </span>
+              <span class="activity-years">{{ a.years }}</span>
+            </div>
+            {% if a.description %}
+              <p class="activity-desc">{{ a.description }}</p>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

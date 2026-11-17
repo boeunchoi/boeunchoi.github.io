@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<div class="post research-page outreach-page">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ '/outreach/' | relative_url }}">Outreach</a>
+  </nav>
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="accent-rule"></div>
+    {% if page.role or page.years %}
+      <p class="activity-meta">
+        {{ page.role -}}
+        {%- if page.role and page.years %} · {% endif -%}
+        {{- page.years }}
+      </p>
+    {% endif %}
+  </header>
+
+  <article class="research-text">
+    {{ content }}
+  </article>
+
+  {% if page.gallery_section %}
+    {% assign gsec = site.data.gallery | where: 'id', page.gallery_section | first %}
+    {% if gsec and gsec.items %}
+      <div class="gallery-grid activity-photos{% if gsec.thumb %} thumb-{{ gsec.thumb }}{% endif %}">
+        {% for item in gsec.items %}
+          <div class="gallery-item">
+            {% include figure.liquid path=item.image alt=item.caption class="img-fluid" zoomable=true %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {% if page.photos and page.photos.size > 0 %}
+    <div class="gallery-grid activity-photos">
+      {% for photo in page.photos %}
+        <div class="gallery-item">
+          {% include figure.liquid path=photo class="img-fluid" zoomable=true %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <a class="more-link back-link" href="{{ '/outreach/' | relative_url }}">
+    <svg
+      aria-hidden="true"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M19 12H5M11 6l-6 6 6 6"></path>
+    </svg>
+    Outreach
+  </a>
+</div>

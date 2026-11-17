@@ -637,3 +637,84 @@ html {
   font-size: 0.85rem;
   border-radius: 18px;
 }
+
+/* ---------- Outreach page: activities list (posts reuse the study cards) ---------- */
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 900px;
+}
+
+.activity {
+  padding: 1rem 0;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+/* optional small photo (img: in _data/outreach.yml) */
+.activity.has-img {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.activity-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-img {
+  flex: 0 0 64px;
+}
+
+.activity-img img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+}
+
+.activity-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
+}
+
+.activity-title {
+  color: var(--global-text-color);
+}
+
+.activity-title a {
+  color: var(--global-theme-color);
+}
+
+.activity-years {
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.activity-desc {
+  margin: 0.3rem 0 0;
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+}
+
+.outreach-page .post-meta-line {
+  margin: 0 0 0.25rem;
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+}
+
+/* Outreach activity pages */
+.activity-meta {
+  margin: 0.9rem 0 0;
+  color: var(--global-text-color-light);
+}
+
+.activity-photos {
+  margin: 2rem 0;
+}

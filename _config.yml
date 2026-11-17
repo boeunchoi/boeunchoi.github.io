@@ -171,6 +171,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  outreach: # activity pages with notes and photos (files in _outreach/)
+    output: true
+    permalink: /outreach/:path/
 
 announcements:
   enabled: true

@@ -2,7 +2,7 @@
 layout: default
 title: gallery
 permalink: /gallery/
-nav: true # hidden from the menu until ready; set to true to show it
+nav: false # hidden from the menu for now (flyers moved to Outreach); set to true to show it
 nav_order: 4
 ---
 

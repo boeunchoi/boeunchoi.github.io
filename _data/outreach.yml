@@ -1,0 +1,18 @@
+# Outreach activities without their own page, shown newest first under the cards on /outreach/.
+# For an activity with notes and photos, make a file in _outreach/ instead (see _outreach/aot-seattle.md).
+# Each entry: title, years; optional description (lighter text below), link (makes the title clickable),
+# and img (small square photo on the left; click to zoom).
+
+- title: Pen Pal Volunteer, [FIUTS](https://www.fiuts.org/), University of Washington
+  years: 2022
+  description: Letter exchange connecting international students with local elementary school students
+
+- title: Public talks at high schools (3 schools), South Korea
+  years: 2020–2021
+
+- title: Staff, IAU GA 2021 Promotion Booth, [Busan Science Festival](https://www.kookje.co.kr/news2011/special_m/2015biff/newsbody.asp?code=0800&key=20190415.22011006331&kid=k5829)
+  years: Apr 2019
+  # img: assets/img/outreach/iau_promotion.JPG
+
+- title: Volunteer Instructor, Seoul Observatory
+  years: 2014–2016
